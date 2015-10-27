@@ -1,0 +1,18 @@
+# Database config template that is copied to config/database.yml during Vagrant provisioning
+
+default: &default
+  adapter: postgresql
+  username: vagrant
+  pool: 5
+  encoding: unicode
+
+development:
+  <<: *default
+  database: vagrant_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: vagrant_test
